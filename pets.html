@@ -5,9 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "css/html5reset.css">
     <link rel = "stylesheet" href = "css/style.css">
+    <script type="text/javascript">
+        function displayInformation () {
+            document.querySelector('h1').innerHTML = "Dante's Pets Gallery";
+            document.querySelector('#URL').innerHTML = document.URL;
+            // document.getElementById('URL').innerHTML = document.URL;
+            document.querySelector('#items').innerHTML = document.querySelectorAll('h2').length;
+            // document.getElementByID('items').innerHTML = document.querySelectorAll('h2').length;
+            document.querySelector('#time').innerHTML = new Date();
+            document.body.style.backgroundColor = "beige";
+        }
+        function copyFunction() {
+            document.querySelector('#cheer').innerHTML += "<br>Go Blue!\n"
+        }
+    </script>
     <title>Pets</title>
 </head>
-<body>
+<body onload = 'displayInformation();'>
     <a class = "stmc" href = "#main">Skip to Main Content</a>
     <header>
         
@@ -61,6 +75,20 @@
                 <li>Sneaking onto the couch</li>
             </ul>
             <span><br></span>
+            <div>
+                <h2>Use JavaScript to display the following information here:</h2>
+                <p>
+                    The URL of this page is: <span id = "URL"></span><br/>
+                    The number of H2 items for this page: <span id = "items"></span><br/>
+                    The current date/time is: <span id = "time"></span><br/>
+                </p>
+    
+                <p oncopy="copyFunction()">Thank you for visiting!</p>
+    
+                
+                <div id="cheer"></div>
+            </div>
+    
             <h2>Fitz</h2>
             <img src="images/Fitz.jpeg" width = "400" alt="Boston terrier watching a tennis ball at the table" class = "center">
             <p>Loves chasings tennis balls, chipmunks, squirrels, and birds. Often found sitting by the fire in wintertime, and in sun patches when available. He’s energetic, mischievous, and easily bored. He loves people and gets grumpy if left without a lap too long.</p> 
